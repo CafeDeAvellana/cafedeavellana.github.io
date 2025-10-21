@@ -6,46 +6,68 @@
   <meta name="robots" content="noindex, nofollow" />
   <title>Desarrollador Android - Tu Nombre</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: "Inter", Arial, sans-serif;
-      background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
-      color: #111827;
+      color: #fff;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-    }
-    .card {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 40px;
-      max-width: 420px;
       text-align: center;
-      transition: transform 0.3s ease;
+      background: url('/imag/oo.png') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
     }
-    .card:hover {
-      transform: scale(1.02);
+
+    /* Capa de oscurecimiento para mejorar legibilidad */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 0;
     }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 40px 30px;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     h1 {
-      color: #0078d7;
       font-size: 1.8rem;
+      color: #f3f4f6;
       margin-bottom: 10px;
     }
+
     p {
       font-size: 1rem;
-      line-height: 1.6;
-      color: #374151;
+      color: #e5e7eb;
+      margin-bottom: 10px;
     }
+
     a {
-      color: #0078d7;
+      color: #fff;
       text-decoration: none;
-      font-weight: 500;
     }
-    a:hover {
-      text-decoration: underline;
-    }
+
     .btn {
       display: inline-block;
       background: #0078d7;
@@ -54,26 +76,41 @@
       border-radius: 8px;
       margin-top: 16px;
       text-decoration: none;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
+
     .btn:hover {
       background: #005fa3;
+      transform: scale(1.05);
     }
-    img {
-      width: 80px;
-      border-radius: 50%;
-      margin-bottom: 16px;
+
+    footer {
+      position: absolute;
+      bottom: 12px;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 30px 20px;
+        margin: 0 10px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <img src="https://lh3.googleusercontent.com/a/ACg8ocKbrLg-54quWGiz5CRgk8HvOqCZwyhDLGOzTWV7LXb66fI3ILo=s360-c-no" alt="Logo Android" />
-    <h1>Desarrollando ideas</h1>
-    <p>Hola 👋 Desde <strong>CafeDeAvellana</strong>, desarrollamos aplicaciones enfocadas en calidad y usabilidad.</p>
-    <a class="btn" href="https://play.google.com/store/apps/developer?id=CafeDeAvellana" target="_blank">
-      Mira nuestras aplicaciones en Google Play
+    <h1>Desarrollador Android</h1>
+    <p>Hola 👋 Soy <strong>Tu Nombre</strong>, creador de aplicaciones Android centradas en rendimiento y diseño.</p>
+    <p>Puedes contactarme en: <a href="mailto:tucorreo@gmail.com">tucorreo@gmail.com</a></p>
+    <a class="btn" href="https://play.google.com/store/apps/dev?id=1234567890123456789" target="_blank">
+      Ver mis aplicaciones en Google Play
     </a>
   </div>
+  <footer>© 2025 Tu Nombre</footer>
 </body>
 </html>
